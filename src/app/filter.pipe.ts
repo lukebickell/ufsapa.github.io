@@ -35,6 +35,18 @@ export class FilterPipe implements PipeTransform {
             }
         });
 
+        member.majors.forEach(major => {
+            if (major.toLowerCase().includes(search)) {
+                contains = true; 
+            }
+        });
+
+        member.minors.forEach(minors => {
+            if (minors.toLowerCase().includes(search)) {
+                contains = true; 
+            }
+        });
+
         return contains;
     }
 }
