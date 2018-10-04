@@ -14,6 +14,7 @@ img {
 .contact-link {
     display: flex;
     flex-direction: column;
+    text-decoration: none;
 }
 
 .social-title {
