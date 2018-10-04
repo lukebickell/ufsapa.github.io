@@ -6,17 +6,24 @@ import { AppComponent } from './app.component';
 import { NavheaderComponent } from './navheader/navheader.component';
 import { MemberListComponent } from './member-list/member-list.component';
 import { FilterPipe} from './filter.pipe';
+import { AppRoutingModule } from './app-routing.module';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavheaderComponent,
     MemberListComponent,
-    FilterPipe
+    FilterPipe,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,3 +5,52 @@ body {
     max-width: 840px;
     background-image: url('./assets/stripes-light.png');
 }
+
+h1 {
+    font-family: 'Allan', Helvetica, Arial, sans-serif;
+}
+
+p {
+    font-family: 'Cardo', Georgia, Times, serif;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    box-shadow: 3px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin: 10px 0;
+    overflow: auto;
+}
+
+.card-image {
+    float: left;
+}
+
+.card-header {
+    font-family: 'Allan', Helvetica, Arial, sans-serif;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.card-content {
+    font-family: 'Cardo', Georgia, Times, serif;
+    font-size: 18px;
+    display: inline-block;
+    width: 100%;
+    margin: 25px;
+}
+
+hr { 
+    display: block;
+    height: 5px;
+    background: #CFDBCB;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    border: none;
+    border-radius: 5px;
+}
