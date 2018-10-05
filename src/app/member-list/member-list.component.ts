@@ -7,7 +7,7 @@ import { MemberService } from '../member.service';
   styleUrls: ['./member-list.component.css']
 })
 export class MemberListComponent implements OnInit {
-  searchText : string;
+  filterText : string;
   constructor(public memberService: MemberService) {  }
 
   ngOnInit() {
