@@ -1,6 +1,7 @@
 img {
     width: 200px;
     height: 200px;
+    border-bottom-right-radius: 15px;
 }
 
 input {
@@ -22,11 +23,10 @@ input:focus {
     margin: 20px;
     text-align: center;
     font-size: 30px;
-    font-family: 'Cardo', Georgia, Times, serif;
+    font-family: 'Roboto', Georgia, Times, serif;
 }
 
 .card:hover {
     background: #f9f9f9;
     transform: scale(1.05);
-    transition: all .3s;
 }

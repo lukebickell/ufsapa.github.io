@@ -7,11 +7,11 @@ body {
 }
 
 h1 {
-    font-family: 'Allan', Helvetica, Arial, sans-serif;
+    font-family: 'Domine', Helvetica, Arial, serif;
 }
 
 p {
-    font-family: 'Cardo', Georgia, Times, serif;
+    font-family: 'Roboto', Georgia, Times, sans-serif;
 }
 
 .card {
@@ -22,6 +22,7 @@ p {
     border-radius: 5px;
     margin: 10px 0;
     overflow: auto;
+    transition: all .3s;
 }
 
 .card-image {
@@ -29,13 +30,13 @@ p {
 }
 
 .card-header {
-    font-family: 'Allan', Helvetica, Arial, sans-serif;
-    font-size: 32px;
+    font-family: 'Domine', Helvetica, Arial, serif;
+    font-size: 34px;
     margin-bottom: 10px;
 }
 
 .card-content {
-    font-family: 'Cardo', Georgia, Times, serif;
+    font-family: 'Roboto', Georgia, Times, sans-serif;
     font-size: 18px;
     display: inline-block;
     width: 100%;
