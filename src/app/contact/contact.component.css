@@ -3,6 +3,12 @@ img {
     height: 100px;
     margin-left: auto;
     margin-right: auto;
+    transition: all .25s;
+}
+
+img:hover {
+    width: 125px;
+    height: 125px;
 }
 
 .contact-link-group {
@@ -20,4 +26,8 @@ img {
 .social-title {
     text-align: center;
     font-weight: 900;
+}
+
+.main-content-card {
+    min-height: 325px;
 }

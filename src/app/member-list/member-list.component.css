@@ -24,3 +24,9 @@ input:focus {
     font-size: 30px;
     font-family: 'Cardo', Georgia, Times, serif;
 }
+
+.card:hover {
+    background: #f9f9f9;
+    transform: scale(1.05);
+    transition: all .3s;
+}
