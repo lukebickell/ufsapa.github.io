@@ -1,6 +1,8 @@
-<div>
+<div class="loading-container">
+  <div *ngIf="memberService.loading" class="loading"></div>
+</div>
+<div *ngIf="!memberService.loading">
   <input [(ngModel)]="filterText" placeholder="Filter by Name, Country, Program, or Major">
-
   <div class="card" *ngFor="let member of memberService.results | filter : filterText">
     <div class="card-image">
       <img src={{member.imageUrl}} />
