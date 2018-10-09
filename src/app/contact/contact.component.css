@@ -7,8 +7,7 @@ img {
 }
 
 img:hover {
-    width: 125px;
-    height: 125px;
+    transform: scale(1.20);
 }
 
 .contact-link-group {
@@ -24,6 +23,7 @@ img:hover {
 }
 
 .social-title {
+    margin-top: 10px;
     text-align: center;
     font-weight: 900;
 }
