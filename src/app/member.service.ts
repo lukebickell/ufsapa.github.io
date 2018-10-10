@@ -39,8 +39,7 @@ export class MemberService {
       if (minors[0] === "") {
         minors = [];
       }
-      let parsedMember = new Member(member.fullname, programs, countries, majors, minors, 
-                                    member.email, member.image, member.officehours);
+      let parsedMember = new Member(member.fullname, programs, countries, majors, minors, member.email, member.image);
       members.push(parsedMember);
     });
     return members;

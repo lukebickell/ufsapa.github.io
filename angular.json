@@ -20,8 +20,12 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
+<<<<<<< HEAD
               "src/assets",
               "src/assets/icons"
+=======
+              "src/assets"
+>>>>>>> parent of 4e6f9e0... routing fix
             ],
             "styles": [
               "src/styles.css"

@@ -23,10 +23,6 @@ export class FilterPipe implements PipeTransform {
             contains = true; 
         }
 
-        if (member.officeHours.toLowerCase().includes(search)) {
-            contains = true; 
-        }
-
         member.programs.forEach(program => {
             if (program.toLowerCase().includes(search)) {
                 contains = true; 
