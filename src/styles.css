@@ -56,36 +56,3 @@ hr {
     border-radius: 5px;
     transition: all .5s;
 }
-
-.loading-container {
-    width: 150px;
-    height: 150px;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-}
-
-.loading {
-    margin: auto;
-    width: 128px;
-    height: 128px;
-    border-radius: 50%;
-    border: 5px solid #E28F41;
-    border-color: #E28F41 transparent #E28F41 transparent;
-    animation: loading 1.2s linear infinite;
-}
-
-@keyframes loading {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-  

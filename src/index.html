@@ -12,46 +12,6 @@
   <link href="https://fonts.googleapis.com/css?family=Domine|Roboto" rel="stylesheet">
 </head>
 <body>
-  <app-root>
-    <style>
-      body {
-        background-image: url('./assets/stripes-light.png');
-      }
-            
-      .loading-container {
-          width: 150px;
-          height: 150px;
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          margin: auto;
-      }
-
-      .loading {
-          margin: auto;
-          width: 128px;
-          height: 128px;
-          border-radius: 50%;
-          border: 5px solid #E28F41;
-          border-color: #E28F41 transparent #E28F41 transparent;
-          animation: loading 1.2s linear infinite;
-      }
-
-      @keyframes loading {
-          0% {
-              transform: rotate(0deg);
-          }
-          100% {
-              transform: rotate(360deg);
-          }
-      }
-    </style>
-    <div class="loading-container">
-      <div class="loading"></div>
-    </div>
-  </app-root>
+  <app-root>Loading...</app-root>
 </body>
 </html>

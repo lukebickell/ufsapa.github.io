@@ -7,10 +7,8 @@ import * as GetSheetDone from 'get-sheet-done';
 })
 export class MemberService {
   results: any;
-  loading: boolean;
   constructor() {
     this.results = [];
-    this.loading = true;
    }
 
   getMembers() {
@@ -19,7 +17,8 @@ export class MemberService {
       .then(
         res => {
         this.results = this.parseMemberData(res.data);
-        this.loading = false;
+        console.log(res);
+        console.log(res.data);
         resolve();
         },
         msg => {
@@ -27,6 +26,7 @@ export class MemberService {
         }
       );
     });
+    return Promise;
   }
 
   parseMemberData(memberData) {
