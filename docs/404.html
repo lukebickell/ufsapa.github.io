@@ -1,28 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+  <title>Study Abroad Peer Advisors</title>
+  <base href="SapaWebsite">
 
-  <title>Match your application's title</title>
-
-  <script>
-    // Store the URL the user was trying to access when receiving the 404.
-    sessionStorage.redirect = location.href;
-  </script>
-
-  <!-- Immediately redirect to the base URL so we can use the SPA routing. -->
-  <meta http-equiv="refresh" content="0;URL='/'">
-</head>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Allan" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cardo" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Domine|Roboto" rel="stylesheet">
+<link rel="stylesheet" href="styles.a2d29861519d286ddf36.css"></head>
 <body>
-<!-- IE required at least 512 bytes of data to show non-default 404. -->
-             
-             
-             
-</body>    
+  <app-root>
+    <style>
+      body {
+        background-image: url('./assets/stripes-light.png');
+      }
             
-             
-</body>
+      .loading-container {
+          width: 150px;
+          height: 150px;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+      }
 
+      .loading {
+          margin: auto;
+          width: 128px;
+          height: 128px;
+          border-radius: 50%;
+          border: 5px solid #E28F41;
+          border-color: #E28F41 transparent #E28F41 transparent;
+          animation: loading 1.2s linear infinite;
+      }
+
+      @keyframes loading {
+          0% {
+              transform: rotate(0deg);
+          }
+          100% {
+              transform: rotate(360deg);
+          }
+      }
+    </style>
+    <div class="loading-container">
+      <div class="loading"></div>
+    </div>
+  </app-root>
+<script type="text/javascript" src="runtime.ec2944dd8b20ec099bf3.js"></script><script type="text/javascript" src="polyfills.f6ae3e8b63939c618130.js"></script><script type="text/javascript" src="main.95090b032d6863e830f7.js"></script></body>
 </html>
