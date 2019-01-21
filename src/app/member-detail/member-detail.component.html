@@ -1,18 +1,11 @@
-<div class="loading-container">
-  <div *ngIf="memberService.loading" class="loading"></div>
-</div>
-
-<div *ngIf="!memberService.loading">
-  <input [(ngModel)]="filterText" placeholder="Filter by Name, Country, Program, or Major">
-
-  <div class="card" *ngFor="let member of memberService.results | filter : filterText"
-    routerLink="/member/{{member.id}}">
+<div class="card" >
 
     <div class="card-image">
       <img src={{member.imageUrl}} />
     </div>
 
     <div class="card-content">
+      
       <div class="card-header">{{member.name}}</div>
       <hr/>
       <div>Program<span *ngIf="member.programs.length>1">s</span>:
@@ -29,13 +22,5 @@
       </div>
 
     </div>
-
-  </div>
-
-  <div class="no-results" *ngIf="(memberService.results | filter: filterText).length === 0">
-    No SAPAs matched your search :(
-    <br>
-    Try another query!
-  </div>
 
 </div>

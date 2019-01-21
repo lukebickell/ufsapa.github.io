@@ -8,7 +8,7 @@ import { MemberService } from '../member.service';
 })
 export class MemberListComponent implements OnInit {
   filterText : string;
-  constructor(public memberService: MemberService) {  }
+  constructor(public memberService: MemberService) {   }
 
   ngOnInit() {
     this.getMembers();
