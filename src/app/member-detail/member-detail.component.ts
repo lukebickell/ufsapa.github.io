@@ -31,12 +31,11 @@ export class MemberDetailComponent implements OnInit {
   }
 
   getMember(): void {
-    this.memberService.getMembers;
-    console.log(this.memberService);
     let id = this.route.snapshot.paramMap.get('id');
+    this.memberService.getMember(id)
+      .subscribe(member => this.member = member);
     console.log(id);
-    this.member = this.memberService.results.find(member => member.id === id);
-     
+    
   }
 
 }

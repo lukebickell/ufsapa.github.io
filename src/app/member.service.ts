@@ -1,37 +1,48 @@
 import { Injectable } from '@angular/core';
 import { Member } from './member';
 import * as GetSheetDone from 'get-sheet-done';
-import { PreloadAllModules } from '@angular/router';
+import { Observable, from } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MemberService {
-  results: any;
   loading: boolean;
   constructor() {
-    this.results = [];
     this.loading = true;
    }
 
-  getMembers() {
-    let promise = new Promise((resolve, reject) => {
-      GetSheetDone.labeledCols("1XaZkNGf_v1n9hd1L2lyVaY60dcSnr2eCxgiIDd07vPc")
+  getMembers(): Observable<Member[]> {
+    return from(GetSheetDone.labeledCols("1XaZkNGf_v1n9hd1L2lyVaY60dcSnr2eCxgiIDd07vPc")
       .then(
         res => {
-        this.results = this.parseMemberData(res.data);
-        this.loading = false;
-        resolve();
+          let results = this.parseMemberData(res.data);
+          this.loading = false;
+          return (results);
         },
         msg => {
-          reject(msg);
+          console.log(msg);
         }
-      );
-    });
+      ));
+  }
+
+  getMember(id: string): Observable<Member> {
+    return from(GetSheetDone.labeledCols("1XaZkNGf_v1n9hd1L2lyVaY60dcSnr2eCxgiIDd07vPc")
+      .then(
+        res => {
+          let results = this.parseMemberData(res.data);
+          let member = results.find(member => member.id === id);
+          this.loading = false;
+          return (member);
+        },
+        msg => {
+          console.log(msg);
+        }
+      ));
   }
 
   parseMemberData(memberData) {
-    let members = new Array();
+    let members:Member[] = [];
 
     memberData.forEach(member => {
       let programs = member.programs.split(';');

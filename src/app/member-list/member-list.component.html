@@ -5,7 +5,7 @@
 <div *ngIf="!memberService.loading">
   <input [(ngModel)]="filterText" placeholder="Filter by Name, Country, Program, or Major">
 
-  <div class="card" *ngFor="let member of memberService.results | filter : filterText"
+  <div class="card" *ngFor="let member of members | filter : filterText"
     routerLink="/member/{{member.id}}">
 
     <div class="card-image">
