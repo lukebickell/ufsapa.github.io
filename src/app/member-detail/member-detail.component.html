@@ -5,7 +5,7 @@
     </div>
 
     <div class="card-content">
-      
+
       <div class="card-header">{{member.name}}</div>
       <hr/>
       <div>Program<span *ngIf="member.programs.length>1">s</span>:
@@ -19,6 +19,15 @@
       </div>
       <div>Office Hours:
         {{member.officeHours}}
+      </div>
+      
+      <div *ngFor="let index of [0,1,2,3,4]">
+        <div *ngIf="member.questions[index]">
+          <br>
+          <b>{{questionTexts[index]}}</b>
+          <br>
+          {{member.questions[index]}}
+        </div>
       </div>
 
     </div>
