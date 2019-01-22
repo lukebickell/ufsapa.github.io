@@ -13,6 +13,7 @@ export class MemberService {
    }
 
   getMembers(): Observable<Member[]> {
+    this.loading = true;
     return from(GetSheetDone.labeledCols("1XaZkNGf_v1n9hd1L2lyVaY60dcSnr2eCxgiIDd07vPc")
       .then(
         res => {
@@ -27,6 +28,7 @@ export class MemberService {
   }
 
   getMember(id: string): Observable<Member> {
+    this.loading = true;
     return from(GetSheetDone.labeledCols("1XaZkNGf_v1n9hd1L2lyVaY60dcSnr2eCxgiIDd07vPc")
       .then(
         res => {
