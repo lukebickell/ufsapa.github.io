@@ -17,7 +17,8 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-For github hosting, 
+For github hosting, move contents of SapaWebsite within dist to the root folder. 
+Then, copy index.html and name it 404.html.
 
 ## Running unit tests
 
