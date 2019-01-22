@@ -31,6 +31,7 @@ export class MemberDetailComponent implements OnInit {
   }
 
   getMember(): void {
+    this.memberService.loading = true;
     let id = this.route.snapshot.paramMap.get('id');
     this.memberService.getMember(id)
       .subscribe(member => this.member = member);

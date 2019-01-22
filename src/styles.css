@@ -43,6 +43,10 @@ p {
     margin: 25px;
 }
 
+.card-content div {
+    margin-bottom: 4px;
+}
+
 hr { 
     display: block;
     height: 5px;
@@ -77,6 +81,10 @@ hr {
     border: 5px solid #E28F41;
     border-color: #E28F41 transparent #E28F41 transparent;
     animation: loading 1.2s linear infinite;
+}
+
+.pointer {
+    cursor: pointer;
 }
 
 @keyframes loading {

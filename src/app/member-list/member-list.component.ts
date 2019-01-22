@@ -11,18 +11,19 @@ export class MemberListComponent implements OnInit {
   filterText : string;
   members : Member[];
 
-  constructor(public memberService: MemberService) {   }
+  constructor(public memberService: MemberService) {  }
 
   ngOnInit() {
     this.getMembers();
   }
 
   getMembers(): void {
+    this.memberService.loading = true;
     this.memberService.getMembers()
       .subscribe(members => this.registerMembers(members));
   }
 
-  // I'm not even sure if this is a callback for above but it's the only way it works with observables
+  // I don't understand why this is necessary but it is
   registerMembers(members : Member[]) {
     this.members = members;
   }

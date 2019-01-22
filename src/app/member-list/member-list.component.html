@@ -5,7 +5,7 @@
 <div *ngIf="!memberService.loading">
   <input [(ngModel)]="filterText" placeholder="Filter by Name, Country, Program, or Major">
 
-  <div class="card" *ngFor="let member of members | filter : filterText"
+  <div class="card pointer" *ngFor="let member of members | filter : filterText"
     routerLink="/member/{{member.id}}">
 
     <div class="card-image">
@@ -13,18 +13,22 @@
     </div>
 
     <div class="card-content">
+
       <div class="card-header">{{member.name}}</div>
       <hr/>
-      <div>Program<span *ngIf="member.programs.length>1">s</span>:
-         {{member.programs.join("\n")}}</div>
-      <div>Major<span *ngIf="member.majors.length>1">s</span>:
+      <div><b>Program<span *ngIf="member.programs.length>1">s</span>:</b>
+        <div *ngFor="let program of member.programs">
+         {{program}}
+        </div>
+      </div>
+      <div><b>Major<span *ngIf="member.majors.length>1">s</span></b>:
          {{member.majors.join(", ")}}</div>
-      <div *ngIf="member.minors.length">Minor<span *ngIf="member.minors.length>1">s</span>:
+      <div *ngIf="member.minors.length"><b>Minor<span *ngIf="member.minors.length>1">s:</span></b>
          {{member.minors.join(", ")}}</div>
-      <div>Email: 
+      <div><b>Email: </b> 
         <a href="mailto:{{member.email}}">{{member.email}}</a>
       </div>
-      <div>Office Hours:
+      <div><b>Office Hours:</b>
         {{member.officeHours}}
       </div>
 
@@ -32,7 +36,7 @@
 
   </div>
 
-  <div class="no-results" *ngIf="(memberService.results | filter: filterText).length === 0">
+  <div class="no-results" *ngIf="(members | filter: filterText).length === 0">
     No SAPAs matched your search :(
     <br>
     Try another query!
