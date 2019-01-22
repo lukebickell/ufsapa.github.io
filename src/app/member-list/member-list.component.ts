@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberService } from '../member.service';
+import { Member } from '../member';
 
 @Component({
   selector: 'app-member-list',
@@ -8,6 +9,8 @@ import { MemberService } from '../member.service';
 })
 export class MemberListComponent implements OnInit {
   filterText : string;
+  members : Member[];
+
   constructor(public memberService: MemberService) {  }
 
   ngOnInit() {
@@ -15,7 +18,12 @@ export class MemberListComponent implements OnInit {
   }
 
   getMembers(): void {
-    this.memberService.getMembers();
+    this.memberService.getMembers()
+      .subscribe(members => this.registerMembers(members));
   }
 
+  // I don't understand why this is necessary but it is
+  registerMembers(members : Member[]) {
+    this.members = members;
+  }
 }

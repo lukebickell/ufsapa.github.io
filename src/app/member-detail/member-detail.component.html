@@ -1,0 +1,17 @@
+<div class="loading-container">
+  <div *ngIf="memberService.loading" class="loading"></div>
+</div>
+
+<div *ngIf="!memberService.loading">
+  <app-member-card [member]="member"></app-member-card>
+
+  <div *ngFor="let index of [0,1,2,3,4]">
+    <div class="card" *ngIf="member.questions[index]">
+      <div class="card-content">
+          <b>{{questionTexts[index]}}</b>
+          <hr/>
+          {{member.questions[index]}}
+      </div>
+    </div>
+  </div>
+</div>

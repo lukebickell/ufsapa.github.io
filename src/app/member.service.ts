@@ -1,36 +1,51 @@
 import { Injectable } from '@angular/core';
 import { Member } from './member';
 import * as GetSheetDone from 'get-sheet-done';
+import { Observable, from } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MemberService {
-  results: any;
   loading: boolean;
   constructor() {
-    this.results = [];
     this.loading = true;
    }
 
-  getMembers() {
-    let promise = new Promise((resolve, reject) => {
-      GetSheetDone.labeledCols("1XaZkNGf_v1n9hd1L2lyVaY60dcSnr2eCxgiIDd07vPc")
+  getMembers(): Observable<Member[]> {
+    this.loading = true;
+    return from(GetSheetDone.labeledCols("1XaZkNGf_v1n9hd1L2lyVaY60dcSnr2eCxgiIDd07vPc")
       .then(
         res => {
-        this.results = this.parseMemberData(res.data);
-        this.loading = false;
-        resolve();
+          let results = this.parseMemberData(res.data);
+          this.loading = false;
+          return (results);
         },
         msg => {
-          reject(msg);
+          console.log(msg);
         }
-      );
-    });
+      ));
+  }
+
+  getMember(id: string): Observable<Member> {
+    this.loading = true;
+    return from(GetSheetDone.labeledCols("1XaZkNGf_v1n9hd1L2lyVaY60dcSnr2eCxgiIDd07vPc")
+      .then(
+        res => {
+          let results = this.parseMemberData(res.data);
+          let member = results.find(member => member.id === id);
+          this.loading = false;
+          return (member);
+        },
+        msg => {
+          console.log(msg);
+        }
+      ));
   }
 
   parseMemberData(memberData) {
-    let members = new Array();
+    let members:Member[] = [];
+
     memberData.forEach(member => {
       let programs = member.programs.split(';');
       let countries = member.countries.split(';');
@@ -39,8 +54,10 @@ export class MemberService {
       if (minors[0] === "") {
         minors = [];
       }
-      let parsedMember = new Member(member.fullname, programs, countries, majors, minors, 
-                                    member.email, member.image, member.officehours);
+      let questions = [member.question1, member.question2, member.question3, member.question4, member.question5];
+
+      let parsedMember = new Member(member.id, member.fullname, programs, countries, majors, minors, 
+                                    member.email, member.image, member.officehours, questions);
       members.push(parsedMember);
     });
     return members;

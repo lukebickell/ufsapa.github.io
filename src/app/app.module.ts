@@ -9,6 +9,8 @@ import { FilterPipe} from './filter.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { MemberDetailComponent } from './member-detail/member-detail.component';
+import { MemberCardComponent } from './member-card/member-card.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ContactComponent } from './contact/contact.component';
     MemberListComponent,
     FilterPipe,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    MemberDetailComponent,
+    MemberCardComponent
   ],
   imports: [
     BrowserModule,

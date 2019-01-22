@@ -1,3 +1,9 @@
+img {
+    width: 200px;
+    height: 200px;
+    border-bottom-right-radius: 15px;
+}
+
 input {
     box-sizing:border-box;
     border-style: solid;
@@ -21,11 +27,3 @@ input:focus {
     font-family: 'Roboto', Georgia, Times, serif;
 }
 
-.card-container:hover {
-    background: #f9f9f9;
-    transform: scale(1.05);
-}
-
-.card-container {
-    transition: all .3s;
-}
