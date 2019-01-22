@@ -3,36 +3,7 @@
 </div>
 
 <div *ngIf="!memberService.loading">
-  <div class="card">
-
-      <div class="card-image">
-        <img src={{member.imageUrl}} />
-      </div>
-
-    
-      <div class="card-content">
-
-        <div class="card-header">{{member.name}}</div>
-        <hr/>
-        <div><b>Program<span *ngIf="member.programs.length>1">s</span>:</b>
-          <div *ngFor="let program of member.programs">
-          {{program}}
-          </div>
-        </div>
-        <div><b>Major<span *ngIf="member.majors.length>1">s</span></b>:
-          {{member.majors.join(", ")}}</div>
-        <div *ngIf="member.minors.length"><b>Minor<span *ngIf="member.minors.length>1">s:</span></b>
-          {{member.minors.join(", ")}}</div>
-        <div><b>Email: </b> 
-          <a href="mailto:{{member.email}}">{{member.email}}</a>
-        </div>
-        <div><b>Office Hours:</b>
-          {{member.officeHours}}
-        </div>
-      
-      </div>
-
-  </div>
+  <app-member-card [member]="member"></app-member-card>
 
   <div *ngFor="let index of [0,1,2,3,4]">
     <div class="card" *ngIf="member.questions[index]">
