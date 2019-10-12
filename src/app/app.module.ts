@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { NgModule } from '@angular/core';
-
+import { MarkdownModule } from 'ngx-markdown';
 import { AppComponent } from './app.component';
 import { NavheaderComponent } from './navheader/navheader.component';
 import { MemberListComponent } from './member-list/member-list.component';
@@ -27,7 +27,7 @@ import { MemberCardComponent } from './member-card/member-card.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    
+    MarkdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
